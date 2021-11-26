@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Yes Driver</string>
+    <string name="empty_field">Field is empty</string>
+    <string name="no_internet">You are out of network</string>
+</resources>
