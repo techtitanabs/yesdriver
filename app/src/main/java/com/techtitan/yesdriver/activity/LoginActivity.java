@@ -2,9 +2,15 @@ package com.techtitan.yesdriver.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.google.android.material.button.MaterialButton;
 import com.techtitan.yesdriver.R;
@@ -14,6 +20,7 @@ import com.techtitan.yesdriver.network.ApiInterface;
 import com.techtitan.yesdriver.network.RestExecutor;
 import com.techtitan.yesdriver.util.Logger;
 import com.techtitan.yesdriver.util.NetworkCheck;
+import com.techtitan.yesdriver.util.S_Preference;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -21,54 +28,96 @@ import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
     ApiInterface apiInterface = RestExecutor.postApiClient().create(ApiInterface.class);
+    private Button login;
+    private ImageView btn_back;
 
-    EditText mobile_ed, password_ed;
-    MaterialButton login_btn;
-    String mobile_txt, password_txt;
+    ProgressBar progressBar;
+    private TextView signup, forgetpassword;
+    private EditText ed_password, ed_username;
+    private String auth_id, password;
+    private Activity activity;
+    private static final String EMAIL = "email";
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        mobile_ed = findViewById(R.id.mobile_ed);
-        password_ed = findViewById(R.id.password_ed);
-        login_btn = findViewById(R.id.login_btn);
+        btn_back = findViewById(R.id.btn_back);
+        progressBar = findViewById(R.id.progressBar);
+        login = findViewById(R.id.login);
+        signup= findViewById(R.id.signup);
+        forgetpassword = findViewById(R.id.forgetpassword);
+        ed_password = findViewById(R.id.ed_password);
+        ed_username = findViewById(R.id.ed_username);
+        showProgress(false);
 
-        validationCheck();
+
+        forgetpassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        signup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(activity, MainActivity.class);
+                startActivity(intent);
+                activity.finish();
+            }
+        });
+
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                validation();
+            }
+        });
 
     }
+    private void btn_Active_Status(boolean isActive){
+        login.setEnabled(isActive);
+        login.setClickable(isActive);
+    }
+    private void showProgress(boolean isStatus){
+        btn_Active_Status(!isStatus);
+        if (isStatus){
+            progressBar.setVisibility(View.VISIBLE);
+        }else {
+            progressBar.setVisibility(View.GONE);
+        }
+    }
 
-    private void validationCheck() {
-        mobile_txt = mobile_ed.getText().toString();
-        password_txt = password_ed.getText().toString();
-
-        if (mobile_txt.isEmpty()){
-            mobile_ed.setError(getResources().getString(R.string.empty_field));
+    private void validation() {
+        password = ed_password.getText().toString();
+        auth_id = ed_username.getText().toString();
+        if (auth_id.isEmpty()){
+            ed_username.setError("Username is empty");
             return;
         }
-        if (password_txt.isEmpty()){
-            password_ed.setError(getResources().getString(R.string.empty_field));
+        if (password.isEmpty()){
+            ed_password.setError("Password is empty");
             return;
         }
-        if (NetworkCheck.isNetworkAvailable(this)) {
-            startLoginCall();
-        }
-        else{
-            Logger.toasterror(this,getResources().getString(R.string.no_internet));
-        }
+        startLoginCall();
     }
 
     private void startLoginCall() {
-        Call<LoginResponse> responseCall = apiInterface.call_login(mobile_txt, password_txt);
+        showProgress(true);
+        Call<LoginResponse> responseCall = apiInterface.call_login(auth_id, password);
         responseCall.enqueue(new Callback<LoginResponse>() {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+                showProgress(false);
                 if (response.isSuccessful() && response.body() != null){
                     LoginResponse result = response.body();
                     if (result.isStatus() != null && result.isStatus() && result.getData() != null){
                         if (result.getMsg().equalsIgnoreCase("Login success")) {
-//                            Data data = result.getData();
+                            new S_Preference(getApplicationContext()).setUserId(result.getData().getDriverId());
                             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                             startActivity(intent);
                             finish();
@@ -81,6 +130,7 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<LoginResponse> call, Throwable t) {
+                showProgress(false);
                 Logger.toasterror(getApplicationContext(),"Error = "+t.getMessage());
             }
         });

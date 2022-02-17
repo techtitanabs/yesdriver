@@ -1,10 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
+    <color name="btn_dark">#64aa2d</color>
+    <color name="purple_500">#667EEA</color>
+    <color name="purple_700">#00B1FF</color>
     <color name="teal_200">#FF03DAC5</color>
+
     <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!--    <color name="black">#02075d</color>-->
+    <color name="black">#1d1952</color>
+    <!--    <color name="black">#02075d</color>-->
+    <color name="hintcolor">#979696</color>
+    <color name="colorSeparator">#CEA2A2A2</color>
+    <color name="Specificationback">#F1F1F1</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="active">#02C060</color>
+    <color name="purple_700d">#E2DDED</color>
+    <color name="teal_200d">#ABFFFF</color>
+    <color name="teal_700d">#CFF6ED</color>
+    <color name="icon_clr">#000000</color>
+
+    <color name="colorcutprice">#EC3030</color>
+    <color name="colorrealprice">#30CD25</color>
+
+    <color name="colorbuynow">#D6F6CF</color>
+    <color name="coloraddtocart">#667EEA</color>
+    <color name="back">#37C5D0FF</color>
+
+    <color name="clr_brandback">#63BBFF</color>
+    <color name="colorsecondary">#64aa2d</color>
+
+    <color name="clr_progress">#FF6F00</color>
+    <color name="icon_gray_color">#89000000</color>
+
+    <color name="colorgradiantstart">#B4F1FB</color>
+    <color name="colorgradiantend">#F2FAFB</color>
+
+    <color name="colorgradiantstartmain">#80f9b7</color>
+    <color name="colorgradiantendmain">#9abdeb</color>
+
+    <color name="coloreditbackground">#F8F8F8</color>
+
+    <color name="clr_addressback">#70FAAE</color>
+
+    <color name="rate5">#029A46</color>
+    <color name="rate4">#029A46</color>
+    <color name="rate3">#029A46</color>
+    <color name="rate2">#FF9E02</color>
+    <color name="rate1">#FF4053</color>
+
 </resources>

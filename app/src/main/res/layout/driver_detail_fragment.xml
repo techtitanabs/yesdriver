@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/txt_main2"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@drawable/btn_active"
+            android:text="Driver Profile"
+            android:paddingTop="@dimen/value_10dp"
+            android:paddingStart="@dimen/value_20dp"
+            android:textSize="@dimen/txt_main1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/driverImage"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/value_10dp"
+            android:adjustViewBounds="true"
+            android:layout_marginTop="@dimen/value_5dp"
+            android:src="@mipmap/ic_logo_round"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_main2"/>
+
+
+        <TextView
+            android:id="@+id/nametxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Driver Name"
+            android:textAlignment="center"
+            android:textSize="@dimen/txt_main1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/driverImage"
+            app:layout_constraintStart_toEndOf="@id/driverImage"
+            />
+        <TextView
+            android:id="@+id/txt_contact"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Mobile Number"
+            android:textSize="@dimen/size_17sp"
+            android:paddingStart="@dimen/value_10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/nametxt"
+            app:layout_constraintBottom_toBottomOf="@id/driverImage"
+            app:layout_constraintStart_toEndOf="@id/driverImage"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/driverImage">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/lin_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:padding="@dimen/value_10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/txt_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        android:text="Email"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="18dp"
+                        android:layout_marginTop="@dimen/value_5dp"
+                        android:background="@drawable/circle"
+                        android:paddingTop="@dimen/value_10dp"
+                        android:paddingStart="@dimen/value_10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/txt_main2" />
+                    <TextView
+                        android:id="@+id/txt_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        android:text="Address"
+                        android:layout_marginTop="@dimen/value_5dp"
+                        android:background="@drawable/circle"
+                        android:paddingStart="@dimen/value_10dp"
+                        android:paddingTop="@dimen/value_10dp"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:id="@+id/txt_city"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        android:text="City Name"
+                        android:paddingStart="@dimen/value_10dp"
+                        android:paddingTop="@dimen/value_10dp"
+                        android:layout_marginTop="@dimen/value_5dp"
+                        android:background="@drawable/circle"
+                        android:textSize="18dp" />
+                    <TextView
+                        android:id="@+id/txt_state"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        android:text="State"
+                        android:paddingStart="@dimen/value_10dp"
+                        android:paddingTop="@dimen/value_10dp"
+                        android:layout_marginTop="@dimen/value_5dp"
+                        android:background="@drawable/circle"
+                        android:textSize="18dp" />
+                    <TextView
+                        android:id="@+id/txt_zip"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        android:text="Zip"
+                        android:paddingStart="@dimen/value_10dp"
+                        android:paddingTop="@dimen/value_10dp"
+                        android:layout_marginTop="@dimen/value_5dp"
+                        android:background="@drawable/circle"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:id="@+id/txt_alternate_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        android:text="Alternate Number"
+                        android:paddingTop="@dimen/value_10dp"
+                        android:textSize="18dp"
+                        android:paddingStart="@dimen/value_10dp"
+                        android:layout_marginTop="@dimen/value_5dp"
+                        android:background="@drawable/circle"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/txt_main2" />
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/value_20dp">
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Bank Details"
+                                android:layout_marginTop="@dimen/value_5dp"
+                                android:textSize="@dimen/txt_main1"
+                                android:textStyle="bold"/>
+
+                            <TextView
+                                android:id="@+id/txt_bank_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="?attr/actionBarSize"
+                                android:text="Bank Name"
+                                android:layout_gravity="center_horizontal"
+                                android:textSize="18dp"
+                                android:layout_marginTop="@dimen/value_5dp"
+                                android:background="@drawable/circle"
+                                android:paddingTop="@dimen/value_10dp"
+                                android:paddingStart="@dimen/value_10dp" />
+                            <TextView
+                                android:id="@+id/txt_account_no"
+                                android:layout_width="match_parent"
+                                android:layout_height="?attr/actionBarSize"
+                                android:text="Account Number"
+                                android:layout_marginTop="@dimen/value_5dp"
+                                android:background="@drawable/circle"
+                                android:paddingStart="@dimen/value_10dp"
+                                android:paddingTop="@dimen/value_10dp"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/txt_branch_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="?attr/actionBarSize"
+                                android:text="Branch Name"
+                                android:paddingStart="@dimen/value_10dp"
+                                android:paddingTop="@dimen/value_10dp"
+                                android:layout_marginTop="@dimen/value_5dp"
+                                android:background="@drawable/circle"
+                                android:textSize="18dp" />
+                            <TextView
+                                android:id="@+id/txt_ifsc"
+                                android:layout_width="match_parent"
+                                android:layout_height="?attr/actionBarSize"
+                                android:text="IFSC Code"
+                                android:paddingStart="@dimen/value_10dp"
+                                android:paddingTop="@dimen/value_10dp"
+                                android:layout_marginTop="@dimen/value_5dp"
+                                android:background="@drawable/circle"
+                                android:textSize="18dp" />
+                            <TextView
+                                android:id="@+id/txt_acc_holder"
+                                android:layout_width="match_parent"
+                                android:layout_height="?attr/actionBarSize"
+                                android:text="Account Holder"
+                                android:paddingStart="@dimen/value_10dp"
+                                android:paddingTop="@dimen/value_10dp"
+                                android:layout_marginTop="@dimen/value_5dp"
+                                android:background="@drawable/circle"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:id="@+id/txt_acc_type"
+                                android:layout_width="match_parent"
+                                android:layout_height="?attr/actionBarSize"
+                                android:text="Account Type"
+                                android:paddingTop="@dimen/value_10dp"
+                                android:textSize="18dp"
+                                android:paddingStart="@dimen/value_10dp"
+                                android:layout_marginTop="@dimen/value_5dp"
+                                android:background="@drawable/circle"
+                               />
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/value_20dp"
+                        >
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:id="@+id/dl_Layout"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="Driving Licence"
+                                android:layout_marginTop="@dimen/value_5dp"
+                                android:textSize="@dimen/txt_main1"
+                                android:textStyle="bold"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                />
+                            <ImageView
+                                android:id="@+id/dl_front"
+                                android:layout_width="0dp"
+                                android:adjustViewBounds="true"
+                                android:layout_height="wrap_content"
+                                android:src="@mipmap/ic_logo"
+                                android:layout_marginStart="@dimen/value_10dp"
+                                android:layout_marginEnd="@dimen/value_5dp"
+                                app:layout_constraintTop_toBottomOf="@id/dl_Layout"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toStartOf="@id/dl_back"/>
+                            <ImageView
+                                android:id="@+id/dl_back"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:adjustViewBounds="true"
+                                android:src="@mipmap/ic_logo"
+                                android:layout_marginStart="@dimen/value_5dp"
+                                android:layout_marginEnd="@dimen/value_10dp"
+                                app:layout_constraintTop_toBottomOf="@id/dl_Layout"
+                                app:layout_constraintStart_toEndOf="@id/dl_front"
+                                app:layout_constraintEnd_toEndOf="parent"/>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/value_20dp"
+                        >
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:id="@+id/aadhaar_Layout"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="Aadhaar Card"
+                                android:layout_marginTop="@dimen/value_5dp"
+                                android:textSize="@dimen/txt_main1"
+                                android:textStyle="bold"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                />
+                            <ImageView
+                                android:id="@+id/aadhaar_front"
+                                android:layout_width="0dp"
+                                android:adjustViewBounds="true"
+                                android:layout_height="wrap_content"
+                                android:src="@mipmap/ic_logo"
+                                android:layout_marginStart="@dimen/value_10dp"
+                                android:layout_marginEnd="@dimen/value_5dp"
+                                app:layout_constraintTop_toBottomOf="@id/aadhaar_Layout"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toStartOf="@id/aadhaar_back"/>
+                            <ImageView
+                                android:id="@+id/aadhaar_back"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:adjustViewBounds="true"
+                                android:src="@mipmap/ic_logo"
+                                android:layout_marginStart="@dimen/value_5dp"
+                                android:layout_marginEnd="@dimen/value_10dp"
+                                app:layout_constraintTop_toBottomOf="@id/aadhaar_Layout"
+                                app:layout_constraintStart_toEndOf="@id/aadhaar_front"
+                                app:layout_constraintEnd_toEndOf="parent"/>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/value_20dp"
+                        >
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:id="@+id/rc_Layout"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="Registration Certification"
+                                android:layout_marginTop="@dimen/value_5dp"
+                                android:textSize="@dimen/txt_main1"
+                                android:textStyle="bold"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                />
+                            <ImageView
+                                android:id="@+id/rc"
+                                android:layout_width="0dp"
+                                android:adjustViewBounds="true"
+                                android:layout_height="wrap_content"
+                                android:src="@mipmap/ic_logo"
+                                android:layout_marginStart="@dimen/value_10dp"
+                                android:layout_marginEnd="@dimen/value_5dp"
+                                app:layout_constraintTop_toBottomOf="@id/rc_Layout"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"/>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateTint="@color/clr_progress"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

@@ -29,7 +29,7 @@ public interface ApiInterface {
     @FormUrlEncoded
     @POST("driver-profile")
     Call<ProfileResponse> call_driver_profile(
-            @Field("referral_code") String referral_code
+            @Field("driver_id") String driver_id
     );
 
     @FormUrlEncoded

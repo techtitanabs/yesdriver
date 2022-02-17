@@ -8,5 +8,35 @@
     tools:context=".activity.MainActivity">
 
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnProfile"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginEnd="@dimen/margine_button2"
+        android:layout_marginStart="@dimen/margine_button2"
+        android:backgroundTint="@color/btn_dark"
+        android:textColor="@color/black"
+        android:text="Driver Profile"
+        app:cornerRadius="@dimen/value_10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btnOrderList"/>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnOrderList"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginEnd="@dimen/margine_button2"
+        android:layout_marginStart="@dimen/margine_button2"
+        android:backgroundTint="@color/btn_dark"
+        android:textColor="@color/black"
+        android:text="Order List"
+        app:cornerRadius="@dimen/value_10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnProfile"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
